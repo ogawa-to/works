@@ -1,0 +1,46 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace Dokushu
+{
+    // プロパティ
+    class Practice8_1
+    {
+        
+        static void Main(string[] args)
+        {
+            // プロパティを介してprivateな変数にアクセスできる。
+            Sample s = new Sample();
+            s.Param1 = 10;
+            int n = s.Param1;
+        }
+        
+    }
+
+    class Sample
+    {
+        private int _param1;
+
+        // SetterとGetterを定義する。
+        public int Param1
+        {
+            set
+            {
+                this._param1 = value;
+            }
+            get
+            {
+                return this._param1;
+            }
+        }
+
+        // 自動プロパティ
+        public int Param2 { get; set; }
+        // 読み取り専用
+        public int Param3 { get; private set; }
+    }
+}
