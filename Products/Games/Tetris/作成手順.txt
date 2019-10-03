@@ -1,0 +1,105 @@
+【①作成手順の列挙】
+■必要なオブジェクトを洗い出す。
+■画像が必要なものは用意する。
+■一連の処理の流れを明記する。
+■工場オブジェクト(ジェネレータ)を洗い出す。
+■監督オブジェクト(ディレクター)を洗い出す。
+■実装開始
+
+【②作業開始】
+■必要なオブジェクトを洗い出す。
+　・テトリミノ(I, J, L, O, Z, S, T)
+　・背景画像
+　・テトリミノ(予測)
+　・テトリミノ(落下済み)
+　・テトリミノ(ホールド)
+<UI>
+　・スコア
+　・秒数
+　・レベル
+
+<SE>
+　・回転
+　・通常消し
+　・テトリス消し
+
+■画像が必要なものは用意する。
+　・テトリミノ
+　・背景画像
+
+■一連の処理の流れを明記する。
+　・タイトル画面
+　　スペースを押下することでメイン画面に遷移する。
+　・メイン画面
+　　<Step1>
+　　キーボードを左右に押下することでミノが左右に動く。
+　　キーボードを上に押下することでハードドロップする。
+　　キーボードのZを押下することでホールドすることができる。
+　　キーボードのX, Cにより右回転，左回転を行う。
+　　ミノは一定時間ごとに1マス落下する。
+　　ミノが設置した際、下キーが押下される　または　一定時間を超えた場合、設置が完了となる。
+
+工場オブジェクト(ジェネレータ)を洗い出す。
+　・Next
+
+監督オブジェクト(ディレクター)を洗い出す。
+　・NextMinoディレクター
+　・盤面ディレクター
+　・Holdディレクター
+
+
+
+
+【X参考サイト】
+・テトリスの基本ルール
+https://w.atwiki.jp/tetriskakera/pages/26.html
+
+・2Dで線を描画する。
+https://qiita.com/kwst/items/ad61e72562a8bcd9a9f7
+
+https://docs.unity3d.com/ja/current/Manual/class-LineRenderer.html
+
+・Gimpで升目を描画する。
+https://okwave.jp/qa/q6319332.html
+
+・画像表示
+
+・GameObjectを複製する。
+http://baba-s.hatenablog.com/entry/2014/09/08/114615
+
+・Unityのスクリプトをステップ実行したい。
+https://docs.microsoft.com/ja-jp/visualstudio/cross-platform/getting-started-with-visual-studio-tools-for-unity?view=vs-2019
+
+・ゲームを作成するうえで参考になる。
+http://2dgames.jp/2012/06/09/ゲーム開発のためのオブジェクト指向observerによる描/
+
+
+https://blog.yagasuri.com/rakugaki/archives/905.html
+
+【後で調べたい用語】
+トレイルレンダラー
+パーティクルシェーダー
+レンダラー
+
+spriteとtexture2Dの違いとは、あとspriteREnder,そもそもrenderとは
+loadとloadAllの違いを確かめる。
+テトリミノの種類を列挙帯できれいにラわしたい。
+(x)のキャストとas X のキャストの違い
+座標の変更に毎回newしないといけないの大変。Vector3をnewせず変更する方法はないk。あ
+instantiateで複製できる情報とできない情報って何だろう。
+キーの押下時間を取得するUtilityクラスを作りたい。
+・Destroyしてもそのフレームが終わるまではオブジェクトがnullにならない(生きている状態)
+この場合は明示的にnullを代入すべきなの？
+
+外部としてはgetterのみ、内部ではgetterもsetterも行うには？
+
+Instantiateで複製できないが。
+　→　そもそもプレハブじゃないとInstantiateは利用できない。
+　
+　resourceについての速度
+　https://qiita.com/takesuke/items/e436580f096eb0e166f1
+　spriteをスライスするとは
+
+【★わかったこと】
+画像のアンカーポイントを左上にしたい。
+TextureのpivotをCenterからTop Leftに変更する。
