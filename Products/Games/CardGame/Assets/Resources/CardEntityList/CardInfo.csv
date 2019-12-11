@@ -1,0 +1,4 @@
+ID	攻撃力(上)	攻撃力(下)	攻撃力(左)	攻撃力(右)	HP	コスト	カード名	カード説明文	画像ファイルパス
+1	2	3	4	5	6	7	Name0	Text0	Image/CardIllust/0001
+2	1	2	3	4	5	6	Name1	Text1	Image/CardIllust/0002
+3	0	1	2	3	4	5	Name2	Text2	Image/CardIllust/0003
