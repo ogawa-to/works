@@ -34,5 +34,9 @@ Products/Games/SheekAndShoot/Library/
 # TestProject (ProjectName include Test)
 Products/Games/*Test*/
 Products/Games/*New*/
+
 # Import Assets
 Products/Games/*/Assets/Outer/
+# PUN Assets
+PhotonUnityNetworking/
+PhotonChatApi/
